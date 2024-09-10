@@ -13,3 +13,13 @@ const promedioNumeros = calcularPromedio(listaNumeros);
 console.log(promedioNumeros); // Esto debería mostrar 3
 
 
+/*
+const buildPath = (input) => {
+  // recuperamos la sublista resultante de quitar el ultimo elemento del input y unimos los elementos en una cadena de caracteres metiendo '/' entre los elementos
+  const inputPath = input.slice(0, -1).join('/');
+  // recuperamos el ultimo elemento del input
+  const inputExtension = input.slice(-1);
+  // unimos el path y la extension con un '.'
+  const inputPathExtension = `${inputPath}.${inputExtension}`; // inputPath + '.' + inputExtension
+  return inputPathExtension;
+}; */
