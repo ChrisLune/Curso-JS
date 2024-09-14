@@ -32,7 +32,7 @@ Paso 8: Elimina la palabra keepcoding a partir del índice anterior
 Paso 9: Imprime el contenido del array "numeros" en la consola
 Paso 10: Imprime la longitud del array "numeros" en la consola
 */
-
+/*
 // Paso 1, crea un array vacio llamado numeros
 const numeros = []
 
@@ -65,7 +65,7 @@ console.log(numeros)
 
 // Paso 10, imprime la longitud del array
 console.log(numeros.length)
-
+*/
 
 /*console.log('06 ejercicio')
 
@@ -99,3 +99,105 @@ numeros.splice(keepcodingIndex,1);
 console.log(numeros);
 //Paso 10: Imprime la longitud del array "numeros" en la consola
 console.log(numeros.length); */
+
+//Dado este listado de valores, crea un programa que separe los números 
+//pares de los impares en dos arrays diferentes.
+/* 
+console.log("07 bucles ejercicio");
+
+const numbers = [1, 2, 33, 41, 5, 60, 74, 87, 90, 101, null, '', false, NaN];
+
+const evenNumbers = []; // Array para almacenar números pares
+const oddNumbers = [];  // Array para almacenar números impares
+
+for (index = 0; index < numbers.length; index ++){
+    if ((numbers[index] % 2) === 0 ){
+        evenNumbers.push(numbers[index])
+    } else{
+        oddNumbers.push(numbers[index])
+    }
+}
+
+console.log(evenNumbers);
+console.log(oddNumbers);
+*/
+
+//Recorrer el array de libros y mostrar en consola 
+//los títulos de los libros que fueron publicados después del año 2000.
+/*
+const books = [
+    { title: '1984', author: 'George Orwell', year: 1949 },
+    {
+      title: 'One Hundred Years of Solitude',
+      author: 'Gabriel García Márquez',
+      year: 1967,
+    },
+    {
+      title: "Harry Potter and the Philosopher's Stone",
+      author: 'J.K. Rowling',
+      year: 1997,
+    },
+    { title: 'The Da Vinci Code', author: 'Dan Brown', year: 2003 },
+    { title: 'Twilight', author: 'Stephenie Meyer', year: 2005 },
+    { title: 'The Hunger Games', author: 'Suzanne Collins', year: 2008 },
+  ];
+
+  let message=''
+  for (book of books){
+    if(book.year > 2000){
+        message=`${message} - ${book.title}`;
+    }
+  }
+  console.log(message);
+
+//otro ejemplo
+/*
+for (let i = 0; i < books.length; i++) {
+  if (books[i].year > 2000) {
+console.log(books[i].title);
+  }
+}
+*/
+/*
+//Ejericio Calculadora con closures
+
+Crear una calculadora con las siguientes funciones:
+*/
+function calculadora() {
+  let total = 0;
+
+  return {
+      sumar: function (num) {
+          total += num;
+          return undefined; // Retornamos undefined como se indica
+      },
+      restar: function (num) {
+          total -= num;
+          return undefined; // Retornamos undefined como se indica
+      },
+      multiplicar: function (num) {
+          total *= num;
+          return undefined; // Retornamos undefined como se indica
+      },
+      dividir: function (num) {
+          if (num !== 0) {
+              total /= num;
+          } else {
+              console.log("No se puede dividir entre cero");
+          }
+          return undefined; // Retornamos undefined como se indica
+      },
+      total: function () {
+          return total; // Retornamos el total acumulado
+      }
+  };
+}
+
+const miCalculadora = calculadora();
+
+console.log(miCalculadora.sumar(5)); // Debería imprimir undefined
+console.log(miCalculadora.restar(2)); // Debería imprimir undefined
+console.log(miCalculadora.multiplicar(4)); // Debería imprimir undefined
+console.log(miCalculadora.dividir(2)); // Debería imprimir undefined
+console.log(miCalculadora.sumar(10)); // Debería imprimir undefined
+console.log(miCalculadora.total()); // Debería imprimir 16
